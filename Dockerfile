@@ -1,5 +1,5 @@
-# Use official OpenJDK 17 full version (guaranteed to exist)
-FROM openjdk:17.0.9-jdk
+# Use Render-supported Java 17 image
+FROM ghcr.io/codexia/render-java:17
 
 # Set working directory
 WORKDIR /app
@@ -18,5 +18,5 @@ COPY src ./src
 # Build Spring Boot app
 RUN ./mvnw clean package -DskipTests
 
-# Set entry point
+# Run the Spring Boot JAR
 ENTRYPOINT ["java","-jar","target/*.jar"]
