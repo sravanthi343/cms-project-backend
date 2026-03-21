@@ -1,5 +1,5 @@
-# Use official OpenJDK 17 image (full version for compatibility)
-FROM openjdk:17
+# Use official OpenJDK 17 full version (guaranteed to exist)
+FROM openjdk:17.0.9-jdk
 
 # Set working directory
 WORKDIR /app
@@ -15,8 +15,8 @@ RUN chmod +x mvnw
 # Copy source code
 COPY src ./src
 
-# Build the Spring Boot app
+# Build Spring Boot app
 RUN ./mvnw clean package -DskipTests
 
-# Set entry point to run the jar
+# Set entry point
 ENTRYPOINT ["java","-jar","target/*.jar"]
