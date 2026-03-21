@@ -1,24 +1,23 @@
 # Stage 1: Build the application
-FROM maven:3.8.4-openjdk-17-slim AS build
+FROM maven:3.9.2-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy the pom.xml and source code
+# Copy files
 COPY pom.xml .
 COPY src ./src
 
-# Package the application (skipping tests for speed)
+# Build
 RUN mvn clean package -DskipTests
 
 # Stage 2: Run the application
-FROM openjdk:17-jdk-slim 
+FROM eclipse-temurin:17-jdk
 WORKDIR /app
 
-# Copy the built jar from the build stage
-# Note: Ensure the jar name matches what Maven generates in /target
+# Copy jar
 COPY --from=build /app/target/*.jar app.jar
 
-# Expose the port Spring Boot runs on (default is 8080)
+# Expose port
 EXPOSE 8080
 
-# Run the jar
+# Run app
 ENTRYPOINT ["java", "-jar", "app.jar"]
