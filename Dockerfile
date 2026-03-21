@@ -1,5 +1,6 @@
 # Use official OpenJDK 17 base image
-FROM openjdk:25-jdk-slim
+# Use official OpenJDK 17 slim image (LTS)
+FROM openjdk:17-slim
 
 # Set working directory
 WORKDIR /app
