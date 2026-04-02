@@ -1,7 +1,7 @@
 package com.cms.service;
 
 import com.cms.dto.ComplaintRequest;
-<<<<<<< HEAD
+
 import com.cms.model.Complaint;
 import com.cms.model.User;
 import com.cms.repository.ComplaintRepository;
@@ -9,19 +9,19 @@ import com.cms.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-=======
+
 import com.cms.model.*;
 import com.cms.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
 import java.util.List;
 
 @Service
 public class ComplaintService {
 
-<<<<<<< HEAD
+
     @Autowired
     private ComplaintRepository complaintRepository;
 
@@ -83,7 +83,7 @@ public class ComplaintService {
         return complaintRepository.save(complaint);
     }
 }
-=======
+
     @Autowired private ComplaintRepository complaintRepository;
     @Autowired private UserRepository userRepository;
 
@@ -128,4 +128,4 @@ public class ComplaintService {
         return complaintRepository.save(c);
     }
 }
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
