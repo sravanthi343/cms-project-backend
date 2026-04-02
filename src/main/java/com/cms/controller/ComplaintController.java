@@ -1,11 +1,11 @@
 package com.cms.controller;
 
-<<<<<<< HEAD
+
 import com.cms.dto.ApiResponse;
 import com.cms.dto.ComplaintRequest;
-=======
+
 import com.cms.dto.*;
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
 import com.cms.model.Complaint;
 import com.cms.service.ComplaintService;
 import jakarta.validation.Valid;
@@ -13,24 +13,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
-<<<<<<< HEAD
 
-=======
->>>>>>> 06559c1 (Initial commit for Render deployment)
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/complaints")
-<<<<<<< HEAD
-=======
+
 @CrossOrigin(origins = "http://localhost:5173")
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
 public class ComplaintController {
 
     @Autowired
     private ComplaintService complaintService;
 
-<<<<<<< HEAD
+
     /**
      * POST /api/complaints
      * Requires: Bearer token (any authenticated user)
@@ -77,7 +73,7 @@ public class ComplaintController {
      *
      * Allowed status values: OPEN, IN_PROGRESS, RESOLVED, CLOSED
      */
-=======
+
     @PostMapping
     public ResponseEntity<ApiResponse<Complaint>> create(
             @Valid @RequestBody ComplaintRequest req,
@@ -107,12 +103,11 @@ public class ComplaintController {
         );
     }
 
->>>>>>> 06559c1 (Initial commit for Render deployment)
     @PutMapping("/{id}/status")
     public ResponseEntity<ApiResponse<Complaint>> updateStatus(
             @PathVariable Long id,
             @RequestParam String status,
-<<<<<<< HEAD
+
             Authentication authentication) {
 
         String userId = authentication.getName();
@@ -122,7 +117,7 @@ public class ComplaintController {
         );
     }
 }
-=======
+
             Authentication auth) {
 
         String user = (auth != null) ? auth.getName() : "anonymous";
@@ -135,4 +130,4 @@ public class ComplaintController {
         );
     }
 }
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
