@@ -93,7 +93,7 @@ public class SecurityConfig {
 
     public CorsConfigurationSource corsSource() {
         var config = new CorsConfiguration();
-        config.setAllowedOriginPatterns(List.of("*")); // TODO: Restrict to frontend URL in production
+        config.setAllowedOriginPatterns(List.of("http://localhost:5173")); // TODO: Restrict to frontend URL in production
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
