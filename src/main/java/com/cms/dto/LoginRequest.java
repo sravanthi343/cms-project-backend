@@ -10,7 +10,7 @@ public class LoginRequest {
     @NotBlank(message = "Password is required")
     private String password;
 
-<<<<<<< HEAD
+
     // ── No-args constructor ──────────────────────────────────────────────────
     public LoginRequest() {}
 
@@ -28,7 +28,7 @@ public class LoginRequest {
     public void setUserId(String userId)     { this.userId = userId; }
     public void setPassword(String password) { this.password = password; }
 }
-=======
+
     // No-args constructor
     public LoginRequest() {}
 
@@ -53,4 +53,4 @@ public class LoginRequest {
         this.password = password;
     }
 }
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
