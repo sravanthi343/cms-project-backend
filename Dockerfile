@@ -21,7 +21,6 @@ EXPOSE 8080
 
 # Run app
 ENTRYPOINT ["java", "-jar", "app.jar"]
-=======
 # Stage 1: Build
 FROM maven:3.9.5-eclipse-temurin-17 AS builder
 WORKDIR /app
@@ -38,4 +37,4 @@ USER cms
 COPY --from=builder /app/target/complaint-management-system-1.0.0.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
