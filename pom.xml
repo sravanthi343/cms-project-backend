@@ -10,8 +10,6 @@
     <relativePath/> <!-- lookup parent from repository -->
 </parent>
   
-<<<<<<< HEAD
-
   <groupId>com.cms</groupId>
   <artifactId>complaint-management-system</artifactId>
   <version>1.0.0</version>
