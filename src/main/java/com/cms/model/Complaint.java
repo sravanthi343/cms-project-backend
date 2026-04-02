@@ -1,26 +1,25 @@
 package com.cms.model;
 
 import jakarta.persistence.*;
-<<<<<<< HEAD
-=======
+
 import lombok.*;
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "complaints")
-<<<<<<< HEAD
+
 public class Complaint {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-=======
+
 @Data @NoArgsConstructor @AllArgsConstructor
 @Builder(toBuilder = true)
 public class Complaint {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
     private Long id;
 
     @Column(nullable = false)
@@ -33,7 +32,7 @@ public class Complaint {
     private String category;
 
     @Enumerated(EnumType.STRING)
-<<<<<<< HEAD
+
     @Column(nullable = false)
     private Status status;
 
@@ -92,7 +91,7 @@ public class Complaint {
     public void setRaisedBy(String raisedBy)         { this.raisedBy = raisedBy; }
     public void setRaisedByName(String name)         { this.raisedByName = name; }
 }
-=======
+
     @Column(nullable = false, columnDefinition = "VARCHAR(20) DEFAULT 'OPEN'")
     @Builder.Default
     private Status status = Status.OPEN;
@@ -114,4 +113,4 @@ public class Complaint {
         if (this.status == null)    this.status    = Status.OPEN;
     }
 }
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
