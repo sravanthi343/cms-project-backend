@@ -13,6 +13,7 @@ public class ComplaintRequest {
     @NotBlank(message = "Category is required")
     private String category;
 
+<<<<<<< HEAD
     // ── No-args constructor ──────────────────────────────────────────────────
     public ComplaintRequest() {}
 
@@ -33,3 +34,37 @@ public class ComplaintRequest {
     public void setDescription(String description) { this.description = description; }
     public void setCategory(String category)       { this.category = category; }
 }
+=======
+    // No-args constructor
+    public ComplaintRequest() {}
+
+    // All-args constructor
+    public ComplaintRequest(String title, String description, String category) {
+        this.title = title;
+        this.description = description;
+        this.category = category;
+    }
+
+    // Getters and Setters
+    public String getTitle() {
+        return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+    public void setCategory(String category) {
+        this.category = category;
+    }
+}
+>>>>>>> 06559c1 (Initial commit for Render deployment)

@@ -8,12 +8,16 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 06559c1 (Initial commit for Render deployment)
 import java.io.IOException;
 import java.util.List;
 
 @Component
 public class JwtFilter extends OncePerRequestFilter {
+<<<<<<< HEAD
 
     @Autowired
     private JwtUtil jwtUtil;
@@ -49,3 +53,23 @@ public class JwtFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
+=======
+    @Autowired private JwtUtil jwtUtil;
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res,
+                                    FilterChain chain) throws ServletException, IOException {
+        String header = req.getHeader("Authorization");
+        if (header != null && header.startsWith("Bearer ")) {
+            String token = header.substring(7);
+            if (jwtUtil.validateToken(token)) {
+                String userId = jwtUtil.extractUserId(token);
+                var auth = new UsernamePasswordAuthenticationToken(
+                        userId, null, List.of(new SimpleGrantedAuthority("USER")));
+                SecurityContextHolder.getContext().setAuthentication(auth);
+            }
+        }
+        chain.doFilter(req, res);
+    }
+}
+>>>>>>> 06559c1 (Initial commit for Render deployment)

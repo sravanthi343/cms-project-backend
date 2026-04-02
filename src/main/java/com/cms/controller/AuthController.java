@@ -1,9 +1,13 @@
 package com.cms.controller;
 
+<<<<<<< HEAD
 import com.cms.dto.ApiResponse;
 import com.cms.dto.AuthResponse;
 import com.cms.dto.LoginRequest;
 import com.cms.dto.RegisterRequest;
+=======
+import com.cms.dto.*;
+>>>>>>> 06559c1 (Initial commit for Render deployment)
 import com.cms.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
+<<<<<<< HEAD
 public class AuthController {
 
     @Autowired
@@ -56,5 +61,19 @@ public class AuthController {
         return ResponseEntity.ok(
             ApiResponse.success("Login successful", authResponse)
         );
+=======
+@CrossOrigin(origins = "http://localhost:5173")
+public class AuthController {
+    @Autowired private AuthService authService;
+
+    @PostMapping("/register")
+    public ResponseEntity<ApiResponse<AuthResponse>> register(@Valid @RequestBody RegisterRequest req) {
+        return ResponseEntity.ok(ApiResponse.success("Registered", authService.register(req)));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<ApiResponse<AuthResponse>> login(@Valid @RequestBody LoginRequest req) {
+        return ResponseEntity.ok(ApiResponse.success("Login successful", authService.login(req)));
+>>>>>>> 06559c1 (Initial commit for Render deployment)
     }
 }
