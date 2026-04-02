@@ -10,46 +10,30 @@ public class LoginRequest {
     @NotBlank(message = "Password is required")
     private String password;
 
-
-    // ── No-args constructor ──────────────────────────────────────────────────
+    // ── No-args constructor ───────────────────────────────────────────────
     public LoginRequest() {}
 
-    // ── All-args constructor ─────────────────────────────────────────────────
-    public LoginRequest(String userId, String password) {
-        this.userId   = userId;
-        this.password = password;
-    }
-
-    // ── Getters ──────────────────────────────────────────────────────────────
-    public String getUserId()   { return userId; }
-    public String getPassword() { return password; }
-
-    // ── Setters ──────────────────────────────────────────────────────────────
-    public void setUserId(String userId)     { this.userId = userId; }
-    public void setPassword(String password) { this.password = password; }
-}
-
-  
-
-    // All-args constructor
+    // ── All-args constructor ─────────────────────────────────────────────
     public LoginRequest(String userId, String password) {
         this.userId = userId;
         this.password = password;
     }
 
-    // Getters and Setters
+    // ── Getters ─────────────────────────────────────────────────────────
     public String getUserId() {
         return userId;
-    }
-    public void setUserId(String userId) {
-        this.userId = userId;
     }
 
     public String getPassword() {
         return password;
     }
+
+    // ── Setters ─────────────────────────────────────────────────────────
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }
 }
-
