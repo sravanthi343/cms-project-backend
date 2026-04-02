@@ -29,8 +29,7 @@ public class LoginRequest {
     public void setPassword(String password) { this.password = password; }
 }
 
-    // No-args constructor
-    public LoginRequest() {}
+  
 
     // All-args constructor
     public LoginRequest(String userId, String password) {
