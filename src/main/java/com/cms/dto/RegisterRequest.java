@@ -19,7 +19,6 @@ public class RegisterRequest {
     @NotBlank(message = "User ID is required")
     private String userId;
 
-<<<<<<< HEAD
     @NotNull(message = "Role is required (STUDENT or FACULTY)")
     private User.Role role;
 
@@ -50,7 +49,7 @@ public class RegisterRequest {
     public void setUserId(String userId)     { this.userId = userId; }
     public void setRole(User.Role role)      { this.role = role; }
 }
-=======
+
     @NotNull(message = "Role is required")
     private User.Role role;
 
@@ -102,4 +101,4 @@ public class RegisterRequest {
         this.role = role;
     }
 }
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
