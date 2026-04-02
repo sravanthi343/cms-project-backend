@@ -1,7 +1,7 @@
 package com.cms.model;
 
 import jakarta.persistence.*;
-<<<<<<< HEAD
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
@@ -11,7 +11,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-=======
+
 import jakarta.validation.constraints.*;
 import lombok.*;
 
@@ -20,19 +20,19 @@ import lombok.*;
 @Data @NoArgsConstructor @AllArgsConstructor @Builder
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
     private Long id;
 
     @NotBlank
     @Column(nullable = false)
     private String fullName;
 
-<<<<<<< HEAD
+
     @Email
     @NotBlank
-=======
+
     @Email @NotBlank
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
     @Column(nullable = false, unique = true)
     private String email;
 
@@ -49,7 +49,7 @@ public class User {
     private Role role;
 
     public enum Role { STUDENT, FACULTY }
-<<<<<<< HEAD
+
 
     // ── No-args constructor ──────────────────────────────────────────────────
     public User() {}
@@ -80,6 +80,6 @@ public class User {
     public void setPassword(String pwd)    { this.password = pwd; }
     public void setUserId(String userId)   { this.userId = userId; }
     public void setRole(Role role)         { this.role = role; }
-=======
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
+
 }
