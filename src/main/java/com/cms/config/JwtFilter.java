@@ -8,16 +8,13 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-<<<<<<< HEAD
 
-=======
->>>>>>> 06559c1 (Initial commit for Render deployment)
 import java.io.IOException;
 import java.util.List;
 
 @Component
 public class JwtFilter extends OncePerRequestFilter {
-<<<<<<< HEAD
+
 
     @Autowired
     private JwtUtil jwtUtil;
@@ -53,7 +50,7 @@ public class JwtFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
-=======
+
     @Autowired private JwtUtil jwtUtil;
 
     @Override
@@ -72,4 +69,4 @@ public class JwtFilter extends OncePerRequestFilter {
         chain.doFilter(req, res);
     }
 }
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
