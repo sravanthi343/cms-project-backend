@@ -1,12 +1,12 @@
 package com.cms.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-<<<<<<< HEAD
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-=======
+
 import org.springframework.context.annotation.*;
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -15,16 +15,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.*;
-<<<<<<< HEAD
 
-=======
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
 import java.util.List;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-<<<<<<< HEAD
+
 
     @Autowired
     private JwtFilter jwtFilter;
@@ -33,17 +31,17 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-=======
+
     @Autowired private JwtFilter jwtFilter;
 
     @Bean
     public PasswordEncoder passwordEncoder() { return new BCryptPasswordEncoder(); }
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-<<<<<<< HEAD
+
             .csrf(csrf -> csrf.disable())
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .sessionManagement(session ->
@@ -65,7 +63,7 @@ public class SecurityConfig {
             .headers(headers -> headers.frameOptions(frame -> frame.disable()))
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
-=======
+
             .csrf(c -> c.disable())
             .cors(c -> c.configurationSource(corsSource()))
             .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -74,12 +72,12 @@ public class SecurityConfig {
                 .anyRequest().authenticated())
             .headers(h -> h.frameOptions(f -> f.disable()))
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
         return http.build();
     }
 
     @Bean
-<<<<<<< HEAD
+
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
@@ -93,7 +91,7 @@ public class SecurityConfig {
         return source;
     }
 }
-=======
+
     public CorsConfigurationSource corsSource() {
         var config = new CorsConfiguration();
         config.setAllowedOriginPatterns(List.of("*")); // TODO: Restrict to frontend URL in production
@@ -105,4 +103,3 @@ public class SecurityConfig {
         return source;
     }
 }
->>>>>>> 06559c1 (Initial commit for Render deployment)
