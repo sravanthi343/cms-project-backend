@@ -1,6 +1,6 @@
 package com.cms.dto;
 
-<<<<<<< HEAD
+
 public class ApiResponse<T> {
 
     private boolean success;
@@ -18,7 +18,7 @@ public class ApiResponse<T> {
     }
 
     // ── Static factory helpers ───────────────────────────────────────────────
-=======
+
 /**
  * Generic API Response class to standardize REST API responses.
  *
@@ -63,7 +63,7 @@ public class ApiResponse<T> {
     }
 
     // Static helper methods
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
     public static <T> ApiResponse<T> success(String message, T data) {
         return new ApiResponse<>(true, message, data);
     }
@@ -71,7 +71,6 @@ public class ApiResponse<T> {
     public static <T> ApiResponse<T> error(String message) {
         return new ApiResponse<>(false, message, null);
     }
-<<<<<<< HEAD
 
     // ── Getters ──────────────────────────────────────────────────────────────
     public boolean isSuccess() { return success; }
@@ -83,6 +82,5 @@ public class ApiResponse<T> {
     public void setMessage(String message)  { this.message = message; }
     public void setData(T data)             { this.data = data; }
 }
-=======
+
 }
->>>>>>> 06559c1 (Initial commit for Render deployment)
