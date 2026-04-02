@@ -50,8 +50,7 @@ public class AuthResponse {
     private User.Role role;
     private String message;
 
-    // No-args constructor
-    public AuthResponse() {}
+   
 
     // All-args constructor
     public AuthResponse(String token, String userId, String fullName, String email, User.Role role, String message) {
