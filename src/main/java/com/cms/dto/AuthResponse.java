@@ -4,44 +4,6 @@ import com.cms.model.User;
 
 public class AuthResponse {
 
-
-    private String    token;
-    private String    userId;
-    private String    fullName;
-    private String    email;
-    private User.Role role;
-    private String    message;
-
-    
-
-    // ── All-args constructor ─────────────────────────────────────────────────
-    public AuthResponse(String token, String userId, String fullName,
-                        String email, User.Role role, String message) {
-        this.token    = token;
-        this.userId   = userId;
-        this.fullName = fullName;
-        this.email    = email;
-        this.role     = role;
-        this.message  = message;
-    }
-
-    // ── Getters ──────────────────────────────────────────────────────────────
-    public String    getToken()    { return token; }
-    public String    getUserId()   { return userId; }
-    public String    getFullName() { return fullName; }
-    public String    getEmail()    { return email; }
-    public User.Role getRole()     { return role; }
-    public String    getMessage()  { return message; }
-
-    // ── Setters ──────────────────────────────────────────────────────────────
-    public void setToken(String token)       { this.token = token; }
-    public void setUserId(String userId)     { this.userId = userId; }
-    public void setFullName(String fullName) { this.fullName = fullName; }
-    public void setEmail(String email)       { this.email = email; }
-    public void setRole(User.Role role)      { this.role = role; }
-    public void setMessage(String message)   { this.message = message; }
-}
-
     private String token;
     private String userId;
     private String fullName;
@@ -49,10 +11,9 @@ public class AuthResponse {
     private User.Role role;
     private String message;
 
-   
-
     // All-args constructor
-    public AuthResponse(String token, String userId, String fullName, String email, User.Role role, String message) {
+    public AuthResponse(String token, String userId, String fullName,
+                        String email, User.Role role, String message) {
         this.token = token;
         this.userId = userId;
         this.fullName = fullName;
@@ -61,47 +22,19 @@ public class AuthResponse {
         this.message = message;
     }
 
-    // Getters and Setters
-    public String getToken() {
-        return token;
-    }
-    public void setToken(String token) {
-        this.token = token;
-    }
+    // Getters
+    public String getToken() { return token; }
+    public String getUserId() { return userId; }
+    public String getFullName() { return fullName; }
+    public String getEmail() { return email; }
+    public User.Role getRole() { return role; }
+    public String getMessage() { return message; }
 
-    public String getUserId() {
-        return userId;
-    }
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public User.Role getRole() {
-        return role;
-    }
-    public void setRole(User.Role role) {
-        this.role = role;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-    public void setMessage(String message) {
-        this.message = message;
-    }
+    // Setters
+    public void setToken(String token) { this.token = token; }
+    public void setUserId(String userId) { this.userId = userId; }
+    public void setFullName(String fullName) { this.fullName = fullName; }
+    public void setEmail(String email) { this.email = email; }
+    public void setRole(User.Role role) { this.role = role; }
+    public void setMessage(String message) { this.message = message; }
 }
-
