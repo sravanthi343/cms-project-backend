@@ -4,7 +4,7 @@ import com.cms.model.User;
 
 public class AuthResponse {
 
-<<<<<<< HEAD
+
     private String    token;
     private String    userId;
     private String    fullName;
@@ -42,7 +42,7 @@ public class AuthResponse {
     public void setRole(User.Role role)      { this.role = role; }
     public void setMessage(String message)   { this.message = message; }
 }
-=======
+
     private String token;
     private String userId;
     private String fullName;
@@ -106,4 +106,4 @@ public class AuthResponse {
         this.message = message;
     }
 }
->>>>>>> 06559c1 (Initial commit for Render deployment)
+
